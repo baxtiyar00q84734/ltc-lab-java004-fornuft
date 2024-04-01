@@ -1,6 +1,6 @@
 package lesson2;
 import java.util.Scanner;
-public class CalculatorHard {
+public class CalculatorH {
     public static void main(String[] args) {
 
         Scanner scanner=new Scanner(System.in);
