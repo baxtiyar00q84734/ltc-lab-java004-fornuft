@@ -50,7 +50,7 @@ public class Main {
 //            System.out.println("Sur");
 //        }
 
-        int rand = (int) (Math.random() * 100) + 1;
+        int rand = (int) (Math.random() * 10) + 1;
         System.out.println(rand);
     }
 }
