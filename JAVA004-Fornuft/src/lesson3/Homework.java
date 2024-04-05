@@ -31,12 +31,13 @@ public class Homework {
         System.out.println(sum);
 
         //6
-        double rand = Math.random() * 10;
-        sum+= rand + input1;
+        int rand = (int) (Math.random() * 10) + 1;
+        //System.out.println(rand);
+        sum += rand + input1;
         System.out.println(sum);
 
         //7
-        if (sum>20){
+        if (sum > 20) {
             System.out.println("its larger than 20");
         } else {
             System.out.println("its not larger than 20");

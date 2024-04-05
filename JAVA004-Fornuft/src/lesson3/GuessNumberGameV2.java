@@ -16,15 +16,18 @@ public class GuessNumberGameV2 {
 
             if (input >= 1 && input <= 10) {
                 if (input > rand) {
-                    System.out.println("Too high. " + "My number was " + rand);
+                    System.out.println("Too high. ");
                 } else if (input < rand) {
-                    System.out.println("Too low. " + "My number was " + rand);
+                    System.out.println("Too low. ");
                 } else {
                     System.out.println("Congratulations.");
                     break;
                 }
             } else {
                 System.out.println("My number is not in the this range, please try again and give input between 1-10.");
+            }
+            if (i == 3) {
+                System.out.println("My number was " + rand);
             }
         }
     }
