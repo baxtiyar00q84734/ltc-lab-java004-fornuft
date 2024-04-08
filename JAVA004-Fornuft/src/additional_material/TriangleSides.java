@@ -1,4 +1,4 @@
-package lesson3;
+package additional_material;
 
 import java.util.Scanner;
 
