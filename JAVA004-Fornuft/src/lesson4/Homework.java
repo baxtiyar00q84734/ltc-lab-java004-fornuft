@@ -9,6 +9,21 @@ public class Homework {
         int score = scanner.nextInt();
 
         String grade = null;
+
+
+//        int age = 15;
+//        String name = "";
+//        name = age > 15 ? "Tural" : "Togrul";
+//
+//        // 90
+
+        int r = score % 10;
+
+        if (r == 0) {
+            score--;
+        }
+
+
         if (score >= 0 && score <= 100) {
             switch (score / 10) {
                 case 10:
@@ -26,12 +41,14 @@ public class Homework {
                     break;
                 default:
                     grade = "F";
+
+
             }
+
         } else {
-            System.out.println("there is no letter for this grade");
+            System.out.println("there is no letter for this grade.");
         }
-
-
         System.out.println("Your grade's letter is: " + grade);
+
     }
 }
