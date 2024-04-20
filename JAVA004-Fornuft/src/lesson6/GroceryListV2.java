@@ -7,7 +7,6 @@ public class GroceryListV2 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int itemCount = 1;
         ArrayList<String> groceryList = new ArrayList<>();
 
         System.out.println("Enter the items for your grocery list. Type 'DONE' when you are finished:");

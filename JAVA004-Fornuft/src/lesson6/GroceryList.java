@@ -7,21 +7,20 @@ public class GroceryList {
     public static void main(String[] args) {
 
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Please add count of your list");
+        System.out.println("Please add the count of your grocery list");
         int itemCount=scanner.nextInt();
         scanner.nextLine();
         String[] groceryList=new String[itemCount];
 
         for (int i = 0; i < groceryList.length; i++) {
-            String input=scanner.nextLine();
-            groceryList[i]=input;
+            groceryList[i]=scanner.nextLine();
         }
 
 
 // enhanced for
-//        for (String item : groceryList){
-//            System.out.println(item);
-//        }
+        for (String item : groceryList){
+            System.out.println(item);
+        }
         
 //    to string method
         System.out.println(Arrays.toString(groceryList));
