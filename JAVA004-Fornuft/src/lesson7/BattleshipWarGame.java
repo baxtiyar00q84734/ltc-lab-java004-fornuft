@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class BattleshipWarGame {
     public static void main(String[] args) {
-
-// 0- empty and not checked  1- full not checked 2- full and checked 3-empty checked
+        Scanner scanner = new Scanner(System.in);
+        boolean hideShip = false;
 
         int[][] battleshipMap = {
                 {0, 0, 1, 1, 1, 1, 0, 0, 0, 0},
@@ -18,18 +18,9 @@ public class BattleshipWarGame {
                 {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
                 {0, 1, 1, 0, 0, 0, 0, 0, 0, 1},
                 {0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
-
         };
 
-        // visualize map
-//        for (int i = 0; i < battleshipMap.length; i++) {
-//            for (int j = 0; j < battleshipMap[i].length; j++) {
-//                System.out.print(battleshipMap[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
 
-        Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Enter coordinates (row and column):");
             int userHitRow = scanner.nextInt();
@@ -44,25 +35,30 @@ public class BattleshipWarGame {
                 System.out.println("You hit!");
 
                 battleshipMap[userHitRow][userHitCol] = 2;
-            } else {
+            } else if(battleshipMap[userHitRow][userHitCol] == 0) {
                 System.out.println("No hit!");
 
                 battleshipMap[userHitRow][userHitCol] = 3;
+            } else {
+                System.out.println("You already checked this coordinate!!!");
             }
 
             System.out.println("Do you want to continue? (type 'quit' to stop)");
             String finishGame = scanner.next();
             if ("quit".equals(finishGame)) {
-
-                for (int i = 0; i < battleshipMap.length; i++) {
-                    for (int j = 0; j < battleshipMap[i].length; j++) {
-                        System.out.print(battleshipMap[i][j] + " ");
-                    }
-                    System.out.println();
-                }
                 break;
             }
         }
+        if (!hideShip) {
+            System.out.println("0-empty and not checked \n1-full not checked \n2-full and checked \n3-empty checked");
+            for (int i = 0; i < battleshipMap.length; i++) {
+                for (int j = 0; j < battleshipMap[i].length; j++) {
+                    System.out.print(battleshipMap[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+
         System.out.println("Game Over!");
     }
 }
