@@ -1,9 +1,11 @@
 package lesson7;
 
-import java.util.Arrays;
+
+import java.util.Scanner;
 
 public class CarInventory {
     public static void main(String[] args) {
+
         String[][] cars={
                 {"Mercedes-Benz", "BMW", "Volkswagen", "Audi", "Porsche"},
                 {"Jaguar", "Mini", "Rolls-Royce", "Land Rover", "Bentley"},
@@ -18,6 +20,17 @@ public class CarInventory {
             }
             System.out.println();
         }
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Which place you want to change?");
+        int row=scanner.nextInt(),column=scanner.nextInt();
+        cars[row][column]= scanner.next();
+
+        for (int i = 0; i < cars.length; i++) {
+            for (int j = 0; j < cars[i].length; j++) {
+                System.out.print(cars[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
+
 }
-// have to finish 3 part is missing
