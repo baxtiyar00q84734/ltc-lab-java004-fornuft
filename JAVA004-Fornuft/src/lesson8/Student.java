@@ -11,11 +11,16 @@ public class Student {
         this.isGraduating = isGraduating;
     }
 
-    public static void main(String[] args) {
-        Student student = new Student("Sabir", 87, true);
+    public void printDetails() {
+        System.out.println("Student Name: " + name + ", Grade: " + grade + ", Is Graduating: " + isGraduating);
+    }
 
-        System.out.println("Name: " + student.name);
-        System.out.println("Grade : " + student.grade);
-        System.out.println("isGraduating: " + student.isGraduating);
+    public boolean isPassing() {
+
+        if (grade >= 50) {
+            return true;
+        } else return false;
+
+        // return grade >= 50;
     }
 }

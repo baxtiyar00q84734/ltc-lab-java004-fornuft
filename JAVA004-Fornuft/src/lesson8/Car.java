@@ -11,13 +11,17 @@ public class Car {
         this.year = year;
     }
 
-    public static void main(String[] args) {
-
-        Car car = new Car("Mercedes", "E200", 2020);
-
-        System.out.println("Make: " + car.make);
-        System.out.println("Model: " + car.model);
-        System.out.println("Year: " + car.year);
-
+    public void printDetails() {
+        System.out.println("Car Make: " + make + ", Model: " + model + ", Year: " + year);
     }
+
+    public boolean isOldCar() {
+
+        if (year < 2010) {
+            return true;
+        } else return false;
+
+        // return year < 2010;
+    }
+
 }

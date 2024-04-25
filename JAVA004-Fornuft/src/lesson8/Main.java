@@ -3,13 +3,17 @@ package lesson8;
 public class Main {
     public static void main(String[] args) {
 
-        //car task 1
+        //car
         Car car = new Car("Mercedes", "E200", 2020);
+        car.printDetails();
 
-        System.out.println("Make: " + car.make);
-        System.out.println("Model: " + car.model);
-        System.out.println("Year: " + car.year);
+        car.isOldCar();
+        System.out.println(car.isOldCar());
+        //student
+        Student student = new Student("Sabir", 87, true);
+        student.printDetails();
 
+        student.isPassing();
 
     }
 }
