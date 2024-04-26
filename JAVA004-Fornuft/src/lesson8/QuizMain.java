@@ -8,9 +8,6 @@ public class QuizMain {
         int score = 0, questionCount = 0;
 
         QuizGame[] questions = {
-                new QuizGame("What is the chemical symbol for water?\nA) H2O\nB) CO2\nC) O2", 'A', "Enter your answer: "),
-                new QuizGame("How many planets are in our solar system?\nA) 7\nB) 8\nC) 9", 'B', "Enter your answer: "),
-                new QuizGame("What is the capital of France?\nA) Berlin\nB) Madrid\nC) Paris", 'C', "Enter your answer: "),
                 new QuizGame("What is 2 + 2?\nA) 3\nB) 4\nC) 5", 'B', "Enter your answer: "),
                 new QuizGame("What is the SI unit of force?\nA) Newton\nB) Watt\nC) Joule", 'A', "Enter your answer: "),
                 new QuizGame("What is the largest planet in the solar system?\nA) Earth\nB) Jupiter\nC) Mars", 'B', "Enter your answer: "),
@@ -33,15 +30,11 @@ public class QuizMain {
             }
 
             QuizGame selectedQuestion = questions[choice - 1];
-            selectedQuestion.displayQuestion();
-            char userAnswer = scanner.next().charAt(0);
 
-            if (selectedQuestion.checkAnswer(userAnswer)) {
-                System.out.println("Correct!");
+            if (selectedQuestion.askQuestion()) {
                 score++;
-            } else {
-                System.out.println("Incorrect!");
             }
+
             questionCount++;
             System.out.println("Your final score is: " + score + "/" + questionCount);
             System.out.println("Do you want to continue (if you want write quit)");
