@@ -1,5 +1,7 @@
 package lesson8;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -14,6 +16,8 @@ public class Main {
         student.printDetails();
 
         student.isPassing();
+
+        // task entertaining
 
     }
 }
