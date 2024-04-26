@@ -12,8 +12,12 @@ public class QuizMain {
                 new QuizGame("How many planets are in our solar system?\nA) 7\nB) 8\nC) 9", 'B', "Enter your answer: "),
                 new QuizGame("What is the capital of France?\nA) Berlin\nB) Madrid\nC) Paris", 'C', "Enter your answer: "),
                 new QuizGame("What is 2 + 2?\nA) 3\nB) 4\nC) 5", 'B', "Enter your answer: "),
-                new QuizGame("What is the SI unit of force?\nA) Newton\nB) Watt\nC) Joule", 'A', "Enter your answer: ")
+                new QuizGame("What is the SI unit of force?\nA) Newton\nB) Watt\nC) Joule", 'A', "Enter your answer: "),
+                new QuizGame("What is the largest planet in the solar system?\nA) Earth\nB) Jupiter\nC) Mars", 'B', "Enter your answer: "),
+                new QuizGame("Who developed the theory of relativity?\nA) Isaac Newton\nB) Albert Einstein\nC) Stephen Hawking", 'B', "Enter your answer: "),
+                new QuizGame("What is the square root of 144?\nA) 10\nB) 12\nC) 14", 'B', "Enter your answer: ")
         };
+
         while (true) {
             System.out.println("Choose a question to answer (1-" + questions.length + "):");
             for (int i = 0; i < questions.length; i++) {
@@ -31,6 +35,7 @@ public class QuizMain {
             QuizGame selectedQuestion = questions[choice - 1];
             selectedQuestion.displayQuestion();
             char userAnswer = scanner.next().charAt(0);
+
             if (selectedQuestion.checkAnswer(userAnswer)) {
                 System.out.println("Correct!");
                 score++;

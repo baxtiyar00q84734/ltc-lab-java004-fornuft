@@ -21,6 +21,10 @@ public class Student {
             return true;
         } else return false;
 
+//        if (isGraduating) {
+//            return true;
+//        } else return false;
+        
         // return grade >= 50;
     }
 }
