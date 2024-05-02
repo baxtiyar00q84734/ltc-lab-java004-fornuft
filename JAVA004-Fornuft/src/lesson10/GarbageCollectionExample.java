@@ -9,11 +9,12 @@ public class GarbageCollectionExample {
         System.gc();
         System.out.println("Requested garbage collection.");
 
-        if (obj1 == null) {
-            System.out.println("Student 1 is null.");
-        } else {
-            System.out.println("Student 1 is not null.");
-        }
+//        if (obj1 == null) {
+//            System.out.println("Student 1 is null.");
+//        } else {
+//            System.out.println("Student 1 is not null.");
+//        }
+
     }
 
 
