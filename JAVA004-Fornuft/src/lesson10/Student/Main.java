@@ -12,7 +12,7 @@ public class Main {
         System.out.println("Major: " + student1.getFaculty());
 
         System.out.println("\nStudent 2:");
-        System.out.println("Name: " + student2.getName());
+       System.out.println("Name: " + student2.getName());
         System.out.println("Age: " + student2.getAge());
         System.out.println("Major: " + student2.getFaculty());
 
