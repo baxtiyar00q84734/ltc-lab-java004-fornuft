@@ -8,16 +8,16 @@ import java.util.Random;
 
 public class CoinFlipGameGUI extends JFrame {
     private JLabel resultLabel;
+    private JLabel scoreLabel;
     private JButton headsButton;
     private JButton tailsButton;
-    private JLabel scoreLabel;
     private int userWins = 0;
     private int computerWins = 0;
     private static final int INITIAL_SCORE = 0;
 
     public CoinFlipGameGUI() {
         setTitle("Coin Flip Game");
-        setSize(400, 300);
+        setSize(400, 350);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -31,24 +31,27 @@ public class CoinFlipGameGUI extends JFrame {
         resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
         mainPanel.add(resultLabel, BorderLayout.CENTER);
 
-        JPanel inputPanel = new JPanel();
-        inputPanel.setLayout(new FlowLayout());
-        inputPanel.setBackground(Color.WHITE);
-
-        headsButton = createButton("Heads", Color.GREEN);
-        tailsButton = createButton("Tails", Color.GREEN);
-
-        inputPanel.add(headsButton);
-        inputPanel.add(tailsButton);
+        JPanel scorePanel = new JPanel();
+        scorePanel.setBackground(Color.DARK_GRAY);
+        scorePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         scoreLabel = new JLabel("Score: User - " + userWins + ", Computer - " + computerWins);
         scoreLabel.setFont(new Font("Arial", Font.BOLD, 16));
         scoreLabel.setForeground(Color.WHITE);
-        scoreLabel.setBackground(Color.DARK_GRAY);
-        scoreLabel.setOpaque(true);
-        scoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        scoreLabel.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        mainPanel.add(scoreLabel, BorderLayout.NORTH);
+        scorePanel.add(scoreLabel);
+
+        mainPanel.add(scorePanel, BorderLayout.NORTH);
+
+        JPanel inputPanel = new JPanel();
+        inputPanel.setLayout(new FlowLayout());
+        inputPanel.setBackground(Color.WHITE);
+
+        headsButton = createButton("Heads", Color.BLACK);
+        tailsButton = createButton("Tails", Color.BLACK);
+
+
+        inputPanel.add(headsButton);
+        inputPanel.add(tailsButton);
 
         mainPanel.add(inputPanel, BorderLayout.SOUTH);
 
@@ -60,7 +63,7 @@ public class CoinFlipGameGUI extends JFrame {
         button.setPreferredSize(new Dimension(100, 50));
         button.setFont(new Font("Arial", Font.PLAIN, 16));
         button.setBackground(color);
-        button.setForeground(getContrastColor(color));
+        button.setForeground(Color.BLACK);
         button.setFocusPainted(false);
         button.addActionListener(new ActionListener() {
             @Override
@@ -71,6 +74,7 @@ public class CoinFlipGameGUI extends JFrame {
         return button;
     }
 
+
     private void guess(String userGuess) {
         Random random = new Random();
         int coinResult = random.nextInt(2); // 0 for heads, 1 for tails
@@ -80,8 +84,10 @@ public class CoinFlipGameGUI extends JFrame {
 
         if (userGuess.equals(result)) {
             userWins++;
+            resultLabel.setText(resultLabel.getText() + " - User scores!");
         } else {
             computerWins++;
+            resultLabel.setText(resultLabel.getText() + " - Computer scores!");
         }
 
         updateScore();
@@ -112,14 +118,6 @@ public class CoinFlipGameGUI extends JFrame {
         computerWins = INITIAL_SCORE;
         updateScore();
         resultLabel.setText("Welcome to Coin Flip Game!");
-    }
-
-    private Color getContrastColor(Color color) {
-        int red = color.getRed();
-        int green = color.getGreen();
-        int blue = color.getBlue();
-        double luminance = (0.299 * red + 0.587 * green + 0.114 * blue) / 255;
-        return luminance > 0.5 ? Color.BLACK : Color.WHITE;
     }
 
     public static void main(String[] args) {
