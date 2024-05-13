@@ -3,7 +3,7 @@ package lesson12.Person;
 import java.util.Objects;
 
 public class Person {
-     String name;
+    String name;
     private int age;
 
     public String getName() {
@@ -29,8 +29,4 @@ public class Person {
         return getAge() == person.getAge() && Objects.equals(getName(), person.getName());
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getName(), getAge());
-    }
 }

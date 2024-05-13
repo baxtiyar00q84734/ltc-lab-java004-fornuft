@@ -1,7 +1,6 @@
 package lesson12.QuizGame;
 
 import java.util.Scanner;
-import java.util.TimerTask;
 
 public class QuizGame {
     Scanner scanner = new Scanner(System.in);
