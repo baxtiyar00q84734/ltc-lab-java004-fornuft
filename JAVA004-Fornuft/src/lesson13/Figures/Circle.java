@@ -10,7 +10,7 @@ public class Circle extends Shape{
     @Override
     public void calculateArea() {
 //        super.calculateArea();
-        double area = Math.PI * radius * radius;
+        double area = Math.PI * Math.pow(radius,2);
         System.out.println("Area of Circle: " + area);
     }
 }
