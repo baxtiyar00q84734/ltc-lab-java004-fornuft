@@ -14,7 +14,7 @@ public class ShapeCalculator {
     }
 
     public double calculateArea(double radius) {
-        return Math.PI * radius * radius;
+        return Math.PI * Math.pow(radius, 2);
     }
 
     public double calculateArea(double side1, double side2, double side3) {
@@ -35,7 +35,7 @@ public class ShapeCalculator {
 
             double area = 0;
 
-            switch (shape.toLowerCase()) {
+            switch (shape) {
                 case "rectangle":
                     System.out.print("Enter length: ");
                     double length = scanner.nextDouble();
@@ -58,7 +58,7 @@ public class ShapeCalculator {
                     area = calculateArea(side1, side2, side3);
                     break;
                 default:
-                    System.out.println("Invalid shape! Please choose rectangle, circle, or triangle.");
+                    System.out.println("Invalid shape!");
                     continue;
             }
 
