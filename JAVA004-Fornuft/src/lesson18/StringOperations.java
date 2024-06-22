@@ -11,5 +11,7 @@ public class StringOperations {
 
         String substring = fullSentence.substring(7, 12);
         System.out.println("Substring: " + substring);
+
+        System.out.println(fullSentence.length());
     }
 }
