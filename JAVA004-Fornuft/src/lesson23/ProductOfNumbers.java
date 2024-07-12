@@ -10,7 +10,6 @@ public class ProductOfNumbers {
         int product = numbers.stream()
                 .reduce(1, (a, b) -> a * b);
 
-        //like factorial?
 
         System.out.println("Product of all numbers: " + product);
     }
